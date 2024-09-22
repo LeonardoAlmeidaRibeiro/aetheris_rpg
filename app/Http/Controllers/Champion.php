@@ -9,13 +9,13 @@ class Champion extends Controller
 
     public function index() 
     {
-        return view('painel.champion.index');
+         return view('painel.champion.index');
 
     }
 
-    public function details() 
+    public function draven() 
     {
-        return view('painel.champion.details_copy');
+        return view('painel.champion.Draven');
 
     }
 

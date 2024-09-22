@@ -10,13 +10,21 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" style="color:White" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Função
+                Função
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{route('funcao.index')}}">Ver</a>
-              <a class="dropdown-item" href="{{route('funcao.create')}}">Cadastrar</a>
+                <a class="dropdown-item" href="{{route('funcao.index')}}">Ver</a>
+                <a class="dropdown-item" href="{{route('funcao.create')}}">Cadastrar</a>
             </div>
-          </li>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="color:White" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Personagem
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{route('personagem.create')}}">Cadastrar</a>
+            </div>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="Gallery.html" style="color:White">Gallery</a>
         </li>

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     Champion,
     HomeController,
-    FuncaoController
+    FuncaoController,
+    PersonagemController
 };
 
 /*
@@ -26,9 +27,13 @@ Route::get('/teste', [HomeController::class, 'teste'])->name('home.teste');
 
 //campeões
 Route::get('/campeao', [Champion::class, 'index'])->name('campeao.index');
-Route::get('/campeao/nome', [Champion::class, 'details'])->name('campeao.index');
+Route::get('/campeao/nome', [Champion::class, 'draven'])->name('campeao.index.draven');
 
 //funcao
 Route::get('/funcao', [FuncaoController::class, 'index'])->name('funcao.index');
 Route::get('/funcao/create', [FuncaoController::class, 'create'])->name('funcao.create');
 Route::post('/funcoes', [FuncaoController::class, 'store'])->name('funcoes.store');
+
+//personagem
+Route::get('/personagem', [PersonagemController::class, 'create'])->name('personagem.create');
+Route::post('/personagem', [FuncaoController::class, 'store'])->name('personagem.store');

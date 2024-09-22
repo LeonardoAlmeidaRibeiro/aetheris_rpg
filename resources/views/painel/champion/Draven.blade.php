@@ -50,9 +50,8 @@
                                     <h6>Revolução do Machado</h6>
                                 </div>
                                 <p><strong>Alcance:</strong> 8 quadrados | <strong>Alvo:</strong> 1 Inimigo</p>
-                                <p><strong>Benefício:</strong> Você faz dois ataques contra o alvo.</p>
-                                <p><strong>Sucesso:</strong> 6 de dano por ataque</p>
-                                <p><strong>Efeito:</strong> Se obtiver sucesso nos dois ataques, causa 3 de dano adicional.</p>
+                                <p><strong>Sucesso:</strong> 9 de dano por ataque</p>
+                                <p><strong>Efeito:</strong> você ajusta 2 espaços e pode realizar um Ataque Básico contra um inimigo.</p>
                                 <p><strong>Fracasso total:</strong> 5 de dano no último alvo.</p>
                             </div>
                             <div class="bg-dark text-light w-50 ps-2 d-flex flex-column" style="border: 2px solid white; padding: 10px;">
@@ -61,7 +60,7 @@
                                 </div>
                                 <p><strong>Alcance:</strong> 8 quadrados | <strong>Alvo:</strong> 1 Inimigo</p>
                                 <p><strong>Sucesso:</strong> 12 de dano por ataque</p>
-                                <p><strong>Efeito:</strong> Se o alvo se mover, sofre 3 de dano adicional.</p>
+                                <p><strong>Efeito:</strong> o alvo perde 2 pontos de vida após cada jogada dele por 2 rodadas ou até que consiga recuperar pontos de vida. Acerta novamente reinicia o efeito.</p>
                                 <p><strong>Fracasso:</strong> 5 de dano.</p>
                             </div>
                         </div>
@@ -72,7 +71,7 @@
                         <div class="d-flex align-items-stretch">
                             <div class="bg-dark text-light w-50 pe-2 d-flex flex-column" style="border: 2px solid white; padding: 10px;">
                                 <div class="bg-secondary text-light text-center p-2">
-                                    <h6>Revolução do Machado</h6>
+                                    <h6>Reta da Morte</h6>
                                 </div>
                                 <p><strong>Alcance:</strong> 8 quadrados | <strong>Alvo:</strong> 1 Inimigo</p>
                                 <p><strong>Benefício:</strong> Você faz dois ataques contra o alvo.</p>

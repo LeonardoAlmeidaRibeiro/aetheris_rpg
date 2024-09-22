@@ -14,12 +14,15 @@ class FuncaoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|string|max:255',
+            'nome' =>  'required|string|min:3|max:200|unique:cad_bas_funcao,nome',
             'vida' => 'required|integer|min:0',
             'ataque' => 'required|integer|min:0',
             'defesa' => 'required|integer|min:0',
             'movimento' => 'required|integer|min:0',
             'descricao' => 'nullable|string|max:1000',
+            'gatilho' => 'nullable|string|max:1000',
+            'passiva' => 'nullable|string|max:1000',
+            'resposta' => 'nullable|string|max:1000',
         ];
     }
 
@@ -27,6 +30,7 @@ class FuncaoRequest extends FormRequest
     {
         return [
             'nome.required' => 'O nome é obrigatório.',
+            'nome.unique' => 'Essa função já está cadastrada    .',
             'vida.required' => 'A vida é obrigatória.',
             'ataque.required' => 'O ataque é obrigatório.',
             'defesa.required' => 'A defesa é obrigatória.',

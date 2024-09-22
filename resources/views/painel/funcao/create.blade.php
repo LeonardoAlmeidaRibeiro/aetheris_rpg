@@ -61,6 +61,24 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="inputPassiva" class="col-sm-2 col-form-label">Passiva</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassiva" name="passiva" placeholder="Passiva" value="{{ old('passiva') }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputGatilho" class="col-sm-2 col-form-label">Gatilho</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="inputGatilho" name="gatilho" placeholder="Gatilho">{{ old('gatilho') }}</textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputResposta" class="col-sm-2 col-form-label">Resposta</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="inputResposta" name="resposta" placeholder="Resposta">{{ old('resposta') }}</textarea>
+                </div>
+            </div>
+            <div class="form-group row">
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>

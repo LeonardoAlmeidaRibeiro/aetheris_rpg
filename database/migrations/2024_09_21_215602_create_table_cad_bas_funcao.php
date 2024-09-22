@@ -18,7 +18,10 @@ return new class extends Migration
             $table->integer('ataque');
             $table->integer('defesa');
             $table->integer('movimento');
-            $table->string('descricao');
+            $table->string('descricao')->nullable();
+            $table->string('passiva')->nullable();
+            $table->string('gatilho')->nullable();
+            $table->string('resposta')->nullable();
             $table->timestamps();
         });
     }

@@ -21,21 +21,14 @@ class FuncaoController extends Controller
 
     public function store(FuncaoRequest $request)
     {
-        // Cria uma nova instância do modelo Funcao
-        $funcao = new Funcao();
-        
-        // Atribui os valores do request ao modelo
-        $funcao->nome = $request->input('nome');
-        $funcao->vida = $request->input('vida');
-        $funcao->ataque = $request->input('ataque');
-        $funcao->defesa = $request->input('defesa');
-        $funcao->movimento = $request->input('movimento');
-        $funcao->descricao = $request->input('descricao');
-        
-        // Salva a função no banco de dados
-        $funcao->save();
-        
-        // Redireciona com uma mensagem de sucesso
-        return redirect()->route('funcao.create')->with('success', 'Função cadastrada com sucesso!');
+        $validator = $request->validated();
+        try {
+           $funcao =  Funcao::create($validator);
+
+            return redirect()->route('funcao.create')->with('success', 'Função cadastrada com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->route('funcao.create')->with('error', 'Erro ao cadastrar a função: ' . $e->getMessage())->withInput();
+        }
     }
+    
 }

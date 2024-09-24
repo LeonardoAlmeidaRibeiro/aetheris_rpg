@@ -4,26 +4,26 @@
     @include('layouts.menu')
     <div class="container">
         @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
         @endif
-    
+
         <form action="{{ route('funcoes.store') }}" method="POST">
             @csrf
             <h2>Cadastrar Função</h2>
             <br>
-            
+
             @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
-    
+
             <div class="form-group row">
                 <label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
                 <div class="col-sm-10">
@@ -40,6 +40,22 @@
                 <label for="inputAtaque" class="col-sm-2 col-form-label">Ataque</label>
                 <div class="col-sm-10">
                     <input type="number" class="form-control" id="inputAtaque" name="ataque" placeholder="Ataque" value="{{ old('ataque') }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputAlcance" class="col-sm-2 col-form-label">Alcance</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="inputAlcance" name="alcance" placeholder="Alcance" value="{{ old('alcance') }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTipo" class="col-sm-2 col-form-label">Tipo</label>
+                <div class="col-sm-10">
+                    <select id="inputTipo" name="tipo" class="form-control" required>
+                        <option value="" disabled selected>Selecione um tipo</option>
+                        <option value="longo alcance">Ataque de Longo Alcance</option>
+                        <option value="corpo a corpo">Ataque Corpo a Corpo</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group row">

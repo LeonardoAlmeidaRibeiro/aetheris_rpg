@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('personagem_poderes', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreignId('personagem_id')->constrained('personagens');
+            $table->integer('personagem_id')->unsigned();
+            $table->foreign('personagem_id')
+                ->references('id')
+                ->on('personagens');
             $table->string('nome');
             $table->integer('alcance');
+            $table->string('tipo');
             $table->string('alvo');
-            $table->text('prejuizo')->nullable(); 
-            $table->text('beneficio')->nullable(); 
+            $table->text('prejuizo')->nullable();
+            $table->text('beneficio')->nullable();
             $table->text('sucesso');
             $table->text('efeito');
             $table->text('fracasso');

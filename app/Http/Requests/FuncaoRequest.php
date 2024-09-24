@@ -17,6 +17,8 @@ class FuncaoRequest extends FormRequest
             'nome' =>  'required|string|min:3|max:200|unique:cad_bas_funcao,nome',
             'vida' => 'required|integer|min:0',
             'ataque' => 'required|integer|min:0',
+            'alcance'  => 'nullable|integer',
+            'tipo' => 'nullable|string|max:1000',
             'defesa' => 'required|integer|min:0',
             'movimento' => 'required|integer|min:0',
             'descricao' => 'nullable|string|max:1000',

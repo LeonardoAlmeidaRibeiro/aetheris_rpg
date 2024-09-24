@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('personagens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->foreignId('funcao_id')->constrained('cad_bas_funcao'); // Relacionamento com a tabela de funções
+            $table->integer('funcao_id')->unsigned();
+            $table->foreign('funcao_id')
+                ->references('id')
+                ->on('cad_bas_funcao');
             $table->timestamps();
         });
         

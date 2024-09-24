@@ -9,7 +9,7 @@ class Poder extends Model
 {
     protected $table = 'personagem_poderes';
 
-    protected $fillable = ['personagem_id', 'nome', 'alcance', 'alvo', 'prejuizo', 'beneficio', 'sucesso', 'efeito', 'fracasso'];
+    protected $fillable = ['personagem_id', 'nome', 'alcance', 'tipo', 'alvo', 'prejuizo', 'beneficio', 'sucesso', 'efeito', 'fracasso'];
 
     public function personagem()
     {

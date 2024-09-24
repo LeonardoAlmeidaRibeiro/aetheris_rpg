@@ -26,19 +26,23 @@ class PersonagemController extends Controller
             'nome' => 'required|string|max:255',
             'funcao_id' => 'required|exists:cad_bas_funcao,id',
             'poderes.*.nome' => 'required|string|max:255',
-            'poderes.*.alcance' => 'required|integer',
+            'poderes.*.alcance' => 'required|integer|min:0',
             'poderes.*.alvo' => 'required|string',
             'poderes.*.sucesso' => 'required|string',
             'poderes.*.efeito' => 'required|string',
             'poderes.*.fracasso' => 'required|string',
         ]);
 
-        $personagem = Personagem::create($request->only('nome', 'funcao_id'));
+        try {
+            $personagem = Personagem::create($request->only('nome', 'funcao_id'));
 
-        foreach ($request->poderes as $poderData) {
-            $personagem->poderes()->create($poderData);
+            foreach ($request->poderes as $poderData) {
+                $personagem->poderes()->create($poderData);
+            }
+
+            return redirect()->route('personagem.create')->with('success', 'Personagem criado com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->route('personagem.create')->with('error', 'Erro ao criar personagem: ' . $e->getMessage());
         }
-
-        return redirect()->route('personagem.create')->with('success', 'Personagem criado com sucesso!');
     }
 }

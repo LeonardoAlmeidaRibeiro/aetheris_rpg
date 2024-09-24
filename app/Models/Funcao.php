@@ -12,11 +12,21 @@ class Funcao extends Model
     protected $table = 'cad_bas_funcao';
 
     protected $fillable = [
-        'nome', 'vida', 'ataque', 'defesa', 'movimento', 'descricao', 'gatilho', 'passiva', 'resposta'
-    ];    
+        'nome',
+        'vida',
+        'ataque',
+        'alcance',
+        'tipo',
+        'defesa',
+        'movimento',
+        'descricao',
+        'gatilho',
+        'passiva',
+        'resposta'
+    ];
     public function getNomeAttribute($value)
     {
-       return mb_strtoupper($value);
+        return mb_strtoupper($value);
     }
     public function setNomeAttribute($value)
     {

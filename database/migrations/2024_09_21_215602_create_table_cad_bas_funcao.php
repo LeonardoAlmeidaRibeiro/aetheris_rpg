@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->integer('vida');
             $table->integer('ataque');
+            $table->integer('alcance')->nullable();
+            $table->string('tipo')->nullable();
             $table->integer('defesa');
             $table->integer('movimento');
             $table->string('descricao')->nullable();

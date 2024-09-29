@@ -15,6 +15,13 @@ class Champion extends Controller
 
     }
 
+    public function show($id) 
+    {
+        $campeao = Personagem::with('poderes')->find($id);
+         return view('painel.champion.details',compact('campeao'));
+
+    }
+
     public function draven() 
     {
         return view('painel.champion.Draven');

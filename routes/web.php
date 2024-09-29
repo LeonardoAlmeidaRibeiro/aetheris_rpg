@@ -27,6 +27,8 @@ Route::get('/teste', [HomeController::class, 'teste'])->name('home.teste');
 
 //campeões
 Route::get('/campeao', [Champion::class, 'index'])->name('campeao.index');
+Route::get('/campea/show/{id}', [Champion::class, 'show'])->name('campeao.show');
+
 Route::get('/campeao/nome', [Champion::class, 'draven'])->name('campeao.index.draven');
 
 //funcao

@@ -15,6 +15,18 @@
                     <a href="{{route('campeao.index.draven')}}" class="btn btn-light">ver</a>
                 </div>
             </div>
+           
+            @foreach($campeoes as $campeao)
+            <div class="card text-white bg-secondary">
+                <img src="{{ asset('storage/' . $campeao->token) }}" alt="Teste" class="rounded-circle mx-auto d-block" style="width: 90px; height: 90px">
+                <div class="card-body">
+                    <h5 class="card-title">{{$campeao->nome}}</h5>
+                    <p class="card-text">{{$campeao->descricao}}.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <a href="{{route('campeao.index.draven')}}" class="btn btn-light">Ver</a>
+                </div>
+            </div>
+        @endforeach
         </div>
     </div>
 

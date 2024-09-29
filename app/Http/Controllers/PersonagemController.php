@@ -25,21 +25,23 @@ class PersonagemController extends Controller
         $request->validate([
             'nome' => 'required|string|max:255',
             'funcao_id' => 'required|exists:cad_bas_funcao,id',
-            'poderes.*.nome' => 'required|string|max:255',
-            'poderes.*.alcance' => 'required|integer|min:0',
-            'poderes.*.alvo' => 'required|string',
-            'poderes.*.sucesso' => 'required|string',
-            'poderes.*.efeito' => 'required|string',
-            'poderes.*.fracasso' => 'required|string',
+            'token' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'imagem' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            // 'poderes.*.nome' => 'required|string|max:255',
+            // 'poderes.*.alcance' => 'required|integer|min:0',
+            // 'poderes.*.alvo' => 'required|string',
+            // 'poderes.*.sucesso' => 'required|string',
+            // 'poderes.*.efeito' => 'required|string',
+            // 'poderes.*.fracasso' => 'required|string',
         ]);
 
         try {
-            $personagem = Personagem::create($request->only('nome', 'funcao_id'));
-
-            foreach ($request->poderes as $poderData) {
-                $personagem->poderes()->create($poderData);
-            }
-
+            // Salvar a imagem
+            $path = $request->file('imagem')->store('imagens/personagens', 'public');
+    
+            // Criar o personagem
+            $personagem = Personagem::create($request->only('nome', 'funcao_id') + ['token' => $path]);
+    
             return redirect()->route('personagem.create')->with('success', 'Personagem criado com sucesso!');
         } catch (\Exception $e) {
             return redirect()->route('personagem.create')->with('error', 'Erro ao criar personagem: ' . $e->getMessage());

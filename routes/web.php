@@ -36,4 +36,4 @@ Route::post('/funcoes', [FuncaoController::class, 'store'])->name('funcoes.store
 
 //personagem
 Route::get('/personagem', [PersonagemController::class, 'create'])->name('personagem.create');
-Route::post('/personagem', [FuncaoController::class, 'store'])->name('personagem.store');
+Route::post('/personagem', [PersonagemController::class, 'store'])->name('personagem.store');

@@ -10,7 +10,7 @@ class Personagem extends Model
     use HasFactory;
     protected $table = 'personagens';
 
-    protected $fillable = ['nome', 'funcao_id'];
+    protected $fillable = ['nome', 'funcao_id','token','imagem'];
 
     public function poderes()
     {

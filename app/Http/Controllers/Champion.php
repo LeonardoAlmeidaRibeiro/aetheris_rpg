@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Personagem;
 use Illuminate\Http\Request;
 
 class Champion extends Controller
@@ -9,7 +10,8 @@ class Champion extends Controller
 
     public function index() 
     {
-         return view('painel.champion.index');
+        $campeoes = Personagem::all();
+         return view('painel.champion.index',compact('campeoes'));
 
     }
 

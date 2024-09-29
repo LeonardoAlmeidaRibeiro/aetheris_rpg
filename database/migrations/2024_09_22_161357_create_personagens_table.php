@@ -18,9 +18,10 @@ return new class extends Migration
             $table->foreign('funcao_id')
                 ->references('id')
                 ->on('cad_bas_funcao');
+            $table->string('token')->nullable(); // Adiciona o campo token
+            $table->string('imagem')->nullable(); 
             $table->timestamps();
         });
-        
     }
 
     /**

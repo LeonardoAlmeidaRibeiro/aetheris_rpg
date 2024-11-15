@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     Champion,
     HomeController,
     FuncaoController,
-    PersonagemController
+    PersonagemController,
+    GameController
 };
 
 /*
@@ -39,3 +40,10 @@ Route::post('/funcoes', [FuncaoController::class, 'store'])->name('funcoes.store
 //personagem
 Route::get('/personagem', [PersonagemController::class, 'create'])->name('personagem.create');
 Route::post('/personagem', [PersonagemController::class, 'store'])->name('personagem.store');
+
+
+Route::get('/teste', [GameController::class, 'home'])->name('home');
+Route::get('/jogo', [GameController::class, 'showGame'])->name('game');
+Route::get('/baralhos', [GameController::class, 'showDeckTypes'])->name('decks');
+Route::get('/campeoes', [GameController::class, 'showChampions'])->name('champions');
+Route::get('/hero', [GameController::class, 'hero'])->name('hero');

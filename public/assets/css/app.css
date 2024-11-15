@@ -1,0 +1,219 @@
+/* app.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    background: #0e0e0e;
+    font-family: 'Roboto', sans-serif;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.main-header nav a {
+    color: #f1f1f1;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.main-header nav a:hover {
+    color: #ffeb3b; /* Cor dourada ao passar o mouse */
+}
+
+.content {
+    margin-top: 80px;
+    padding: 40px 20px;
+}
+
+.main-footer {
+    background: #222;
+    color: #777;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card-container {
+    background: #1b1b1b;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.card-container:hover {
+    transform: scale(1.05);
+}
+.card-container {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+body, .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+.main-footer {
+    background: #222;
+    color: #777;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Para fixar o rodapé na parte inferior */
+}
+/*
+	dark green: 48542e
+	light green: c7c7b0
+	background: e7e5d3
+	at-will: 5b8f62
+	encounter: 811c32
+	daily: 414342
+	power gradient beginning: dad9c7
+	power gradient end: ffffff
+*/
+
+/* whole table */
+table.power, table.monster {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	font-family: helvetica;
+	width: 500px;
+}
+table.monster {
+	background-color: #e7e5d3;
+}
+
+/* Headings  */
+table.monster thead {
+	background-color: #48542e;
+	color: #ffffff;
+}
+thead.atwill {
+	background-color: #5b8f62;
+	color: #ffffff;
+}
+thead.encounter {
+	background-color: #811c32;
+	color: #ffffff;
+}
+thead.daily {
+	background-color: #414342;
+	color: #ffffff;
+}
+
+/* Applies to everything */
+table.monster span, table.power span {
+	display:block;
+	text-indent: -15px;
+	margin-left: 20px;
+	margin-right: 5px;
+}
+
+/* also applies to everything */
+table.monster td, table.power td {
+	vertical-align: top;
+}
+
+/* name  line */
+span.name {
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* role  line */
+span.role {
+	font-weight: bold;
+	color: #ffffff;
+	float: right;
+}
+
+/* type  line */
+span.type {
+	color: #ffffff;
+}
+
+/* exp  line */
+span.exp {
+	float: right;
+	color: #ffffff;
+}
+
+/* embedded tables */
+table table {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	width: 100%;
+}
+
+/* first block of stats */
+tr.mainstats {
+}
+
+/* heading of powers */
+tr.powerhead {
+	background-color: #c7c7b0;
+}
+
+/* body of powers */
+tr.powerbody {
+}
+
+/* seconda block of stats */
+tr.secondstats {
+	background-color: #c7c7b0;
+}
+
+/* equipment */
+tr.equipment {
+}
+
+span.class {
+	float: right;
+	color: #ffffff;
+}
+
+tr.color, tr.indentcolor {
+	background-color: #dad9c7;
+}
+tr.backpng, tr.indentbackpng {
+	background-image: url(powerback.png);
+	background-repeat: repeat-y;
+}
+tr.backgif, tr.indentbackgif {
+	background-image: url(powerback.gif);
+	background-repeat: repeat-y;
+}
+tr.indent span, tr.indentcolor span, tr.indentbackpng span, tr.indentbackgif span {
+	margin-left: 35px;
+}
+
+span.flavortext {
+	font-style:italic;
+}
+
+span.action, span.powertype {
+	font-weight: bold;
+}

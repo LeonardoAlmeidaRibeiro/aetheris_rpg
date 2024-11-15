@@ -25,7 +25,7 @@ class Champion extends Controller
     public function draven() 
     {
         return view('painel.champion.Draven');
-
+    
     }
 
 }
